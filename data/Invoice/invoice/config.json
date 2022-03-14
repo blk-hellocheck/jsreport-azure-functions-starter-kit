@@ -1,0 +1,20 @@
+{
+    "name": "invoice",
+    "engine": "handlebars",
+    "recipe": "chrome-pdf",
+    "data": {
+        "shortid": "X7yo_N39M"
+    },
+    "shortid": "Jazd95gkwL",
+    "chrome": {
+        "printBackground": true
+    },
+    "creationDate": {
+        "$$date": 1647217210138
+    },
+    "modificationDate": {
+        "$$date": 1647227326237
+    },
+    "_id": "GyzRBDQx4ZdDguEZ",
+    "$entitySet": "templates"
+}

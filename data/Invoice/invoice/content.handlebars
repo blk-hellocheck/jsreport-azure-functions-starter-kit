@@ -1,0 +1,169 @@
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <style>
+            {{asset "invoice-styles.css" "utf8"}}
+        </style>
+    </head>
+    <body>
+      <div class="invoiceContainer">
+         <div class="invoiceHeader">
+             <img src="{{logoUrl}}" style="max-width: 20%; height: auto"/>
+             <table>
+                 <tr>
+                     <td class="title">
+                         Invoice
+                     </td>
+                 </tr>
+                 <tr>
+                     <td class="subTitle">
+                         {{date}}
+                     </td>
+                 </tr>
+             </table>
+         </div>
+         <table class="contactDetails">
+             <tr>
+                 <td class="detailsCell">
+                     <span class="detailsTitle">COMPANY</span> <span class="detailsValue">{{businessName}}</span>
+                 </td>
+                 <td>
+                     <span class="detailsTitle">INVOICE FOR</span> <span class="detailsValue">{{clientName}}</span>
+                 </td>
+             </tr>
+             <tr>
+                 <td class="detailsCell">
+                    <span class="detailsTitle">ADDRESS</span> <span class="detailsValue">{{businessAddress}}</span>
+                 </td>
+                 <td>
+                     <span class="detailsTitle">PAYMENT TERMS</span> <span class="detailsValue">{{paymentTerms}}</span>
+                 </td>
+             </tr>
+             <tr>
+                 <td class="detailsCell">
+                     <span class="detailsTitle">PHONE</span> <span class="detailsValue">{{operatorPhoneNumber}}</span>
+                 </td>
+             </tr>
+             <tr>
+                 <td class="detailsCell">
+                     <span class="detailsTitle">EMAIL</span> <span class="detailsValue">{{operatorEmailAddress}}</span>
+                 </td>
+             </tr>
+         </table>
+
+         <hr class="solid"/>
+        
+        <div>
+            <p>
+                Hello {{clientName}},
+            </p>
+            <p>
+                This is your new invoice from {{businessName}}. Please send payment as soon as possible.
+            </p>
+            <p>
+                Thank you!
+            </p>
+        </div>
+         
+         <div class="topMargin">
+            <table class="serviceDetails">
+                <tr>
+                    <th class="leftAlign">
+                        SERVICE
+                    </th>
+                    <th class="rightAlign">
+                        PRICE
+                    </th>
+                </tr>
+                <tr class="spacer"></tr>
+                {{#each serviceDetails}}
+                    <tr class="serviceText">
+                        <td>
+                           <span>{{service.name}}</span>
+                        </td>
+                        <td class="rightAlign">
+                            ${{price}}
+                        </td>
+                    </tr>
+                    {{#each lineItems}}
+                    <tr class="lightText">
+                        <td class="lineItemTitle">
+                            {{name}}
+                        </td>
+                        <td class="rightAlign">
+                            ${{price}}
+                        </td>
+                    </tr>
+                    {{/each}}
+
+                    {{#if @last}}
+                    {{else}}
+                    <tr class="last">
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    {{/if}}
+                {{/each}}
+            </table>
+            
+            <div class="totalContainer">
+                <div>
+                    Total
+                </div>
+                <div>
+                    ${{totalAmount}}
+                </div>
+            </div>
+         </div>
+
+         {{#if stripeLink}}
+        <div class="stripeLink">
+        <a href={{stripeLink}}>
+            <div>
+                Securely Pay this ${{totalAmount}} Invoice Now   
+            </div>
+            <img src="{{asset "chevron_right.svg" "dataURI"}}" style="height: 16; width: 16;">
+         </a>
+        </div>
+         {{/if}}
+
+        <div class="topMargin">
+            <table class="serviceDetails">
+                <tr>
+                    <th class="leftAlign">
+                        NOTES
+                    </th>
+                </tr>
+            </table>
+
+            <p>
+                {{notes}}
+            </p>
+        </div>
+       
+        </div>
+        <footer class="footer">
+            <div class="footerAuto">
+                    This invoice was automatically generated. If you have any questions, please reach out to {{operatorName}} at {{operatorPhoneNumber}} or{{operatorEmailAddress}}.
+            </div>
+
+            <div style="display: flex; flex-dierection: row; justify-content: space-between;">
+                <div style="display: flex;"> 
+                    <div class="waterMark">
+                            <img src="{{asset "black.png" "dataURI"}}" style="width: 10px; height: 10px;" />
+                            <div style="margin-left: 4px;">QUOTE GENERATED BY CHECK</div> 
+                    </div>
+                    <div class="footerSite">
+                        www.hellocheck.co
+                    </div>
+                </div>
+                <div class="footerSite">
+                    Copyright 2022 LSB Software, Inc. All rights reserved.
+                </div>
+            </div>
+                
+        </footer>
+    </body>
+</html>

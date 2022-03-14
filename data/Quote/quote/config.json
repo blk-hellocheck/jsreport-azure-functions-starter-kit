@@ -1,0 +1,20 @@
+{
+    "name": "quote",
+    "engine": "handlebars",
+    "recipe": "chrome-pdf",
+    "data": {
+        "shortid": "3hh2bKe5h"
+    },
+    "shortid": "4a-UFknobS",
+    "chrome": {
+        "printBackground": true
+    },
+    "creationDate": {
+        "$$date": 1647110737663
+    },
+    "modificationDate": {
+        "$$date": 1647225070156
+    },
+    "_id": "BTilBWpfZCbJYgFD",
+    "$entitySet": "templates"
+}

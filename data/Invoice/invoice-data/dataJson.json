@@ -1,0 +1,48 @@
+{
+    "date": "June 1, 2021",
+    "businessName": "Lawns Company",
+    "businessAddress": "1234 Main St. Central City, ST 12345",
+    "logoUrl": "https://prodblock.blob.core.windows.net/logos/Operator_7956_Business_Logo.png",
+    "operatorPhoneNumber": "555-555-5555",
+    "operatorEmailAddress": "matthew@lawnscompany.com",
+    "operatorName": "Matthew Armstrong",
+    "clientName": "Blake Anderson",
+    "paymentTerms": "30 days",
+    "serviceDetails": [
+        {
+            "service": {
+                "name": "Lawn Care"
+            },
+            "lineItems": [
+                {
+                    "name": "Mowing",
+                    "price": "30.00"
+                },
+                {
+                    "name": "Weed Eating",
+                    "price": "20.00"
+                },
+                {
+                    "name": "Blowing",
+                    "price": "5.00"
+                }
+            ],
+            "price": "55.00"
+        },
+        {
+            "service": {
+                "name": "Edge Setting"
+            },
+            "price": "20.00"
+        },
+        {
+            "service": {
+                "name": "Gutter Cleaning"
+            },
+            "price": "40.00"
+        }
+    ],
+    "totalAmount": "115.00",
+    "stripeLink": "https://www.stripe.com",
+    "notes": "Thank you again, Jacob! It was a pleasure serving you this season. I look forward to working with you again next year. Please, consider me if you have any future needs during the Fall and Winter. I offer leaf cleanup and pressure washing services as well."
+}

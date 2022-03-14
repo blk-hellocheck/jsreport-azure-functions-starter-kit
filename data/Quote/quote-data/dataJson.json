@@ -1,0 +1,71 @@
+{
+    "businessName": "Lawns Company",
+    "businessAddress": "1234 Main St. Central City, ST 12345",
+    "logoUrl": "https://prodblock.blob.core.windows.net/logos/Operator_7956_Business_Logo.png",
+    "operatorPhoneNumber": "555-555-5555",
+    "operatorEmailAddress": "matthew@lawnscompany.com",
+    "operatorName": "Matthew Armstrong",
+    "clientName": "Blake Anderson",
+    "validFor": "30 days",
+    "date": "June 1, 2021",
+    "serviceDetails": [
+        {
+            "service": {
+                "name": "Lawn Care",
+                "frequency": "Every week"
+            },
+            "lineItems": [
+                {
+                    "name": "Mowing",
+                    "price": "30.00"
+                },
+                {
+                    "name": "Weed Eating",
+                    "price": "20.00"
+                },
+                {
+                    "name": "Blowing",
+                    "price": "5.00"
+                }
+            ],
+            "price": "55.00"
+        },
+        {
+            "service": {
+                "name": "Lawn Care",
+                "tag": "Optional",
+                "frequency": "Every 2 weeks"
+            },
+            "lineItems": [
+                {
+                    "name": "Mowing",
+                    "price": "35.00"
+                },
+                {
+                    "name": "Weed Eating",
+                    "price": "20.00"
+                },
+                {
+                    "name": "Blowing",
+                    "price": "5.00"
+                }
+            ],
+            "price": "55.00"
+        },
+        {
+            "service": {
+                "name": "Edge Setting",
+                "tag": "Optional"
+            },
+            "price": "20.00"
+        },
+        {
+            "service": {
+                "name": "Gutter Cleaning",
+                "tag": "Optional"
+            },
+            "price": "40.00"
+        }
+    ],
+    "notes": "Thank you again, Jacob! It was a pleasure getting to meet you and I look forward to working with you this season. Please, consider me if you have any other home service needs. I offer leaf cleanup and pressure washing services as well."
+}
