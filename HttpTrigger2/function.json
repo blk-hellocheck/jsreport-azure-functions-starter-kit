@@ -1,0 +1,11 @@
+{
+    "bindings": [
+        {
+            "name": "quoteData",
+            "type": "queueTrigger",
+            "direction": "in",
+            "queueName": "pdf-queue",
+            "connection": "AzureWebJobsStorage"
+        }
+    ]
+}

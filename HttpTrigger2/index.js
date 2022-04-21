@@ -15,29 +15,28 @@ const init = (async () => {
 
 module.exports = async function (context, req) {
   try {
+    context.log.verbose(req.template, req.data);
     await init;
     // use the request body from post, if not specified return a sample template report for preview in browser
-    const res = await jsreport.render(
-      req.body || {
-        template: {
-          name: "invoice",
-        },
-      }
-    );
+    const res = await jsreport.render({
+      template: req.template,
+      data: req.data,
+    });
 
     const blobServiceClient = BlobServiceClient.fromConnectionString(
       process.env.AzureWebJobsStorage
     );
 
-    const blobName = req.body.blobName;
-
-    const containerName =
-      req.body.template.name === "quote" ? "quotes" : "invoices";
+    const blobName = req.blobName;
+    context.log.verbose("BloblName:", blobName);
+    const containerName = req.template.name === "quote" ? "quotes" : "invoices";
 
     const containerClient = blobServiceClient.getContainerClient(containerName);
     const blockBlobClient = containerClient.getBlockBlobClient(blobName);
 
     const uploadResponse = await blockBlobClient.uploadData(res.content);
+
+    context.log.verbose(uploadResponse);
 
     const blobUri =
       `https://checkdevstorage.blob.core.windows.net/${containerName}/` +
@@ -46,6 +45,8 @@ module.exports = async function (context, req) {
     context.res = {
       body: blobUri,
     };
+
+    context.done();
   } catch (e) {
     console.warn(e);
     context.res = {
