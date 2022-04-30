@@ -34,9 +34,15 @@ module.exports = async function (context, req) {
     const containerClient = blobServiceClient.getContainerClient(containerName);
     const blockBlobClient = containerClient.getBlockBlobClient(blobName);
 
-    const uploadResponse = await blockBlobClient.uploadData(res.content);
+    const blobOptions = {
+      blobHTTPHeaders: { blobContentType: "application/pdf" },
+    };
 
-    context.log.verbose(uploadResponse);
+    const uploadResponse = await blockBlobClient.upload(
+      res.content,
+      res.content.length,
+      blobOptions
+    );
 
     const blobUri =
       `https://checkdevstorage.blob.core.windows.net/${containerName}/` +
