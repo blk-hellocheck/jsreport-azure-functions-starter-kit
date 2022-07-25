@@ -177,7 +177,14 @@ tr.last td{
 .totalContainer {
     background: #F5F6F8;
     border-radius: 4px;
-    
+    display: flex;
+    flex-direction: column;
+}
+
+.totalItems {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .waterMark {

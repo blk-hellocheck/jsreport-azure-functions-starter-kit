@@ -43,6 +43,8 @@
         }
     ],
     "totalAmount": "115.00",
+    "paidAmount": "100.00",
+    "dueAmount": "15.00",
     "stripeLink": "https://www.stripe.com",
     "notes": "Thank you again, Jacob! It was a pleasure serving you this season. I look forward to working with you again next year. Please, consider me if you have any future needs during the Fall and Winter. I offer leaf cleanup and pressure washing services as well."
 }

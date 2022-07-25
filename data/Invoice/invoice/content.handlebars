@@ -109,12 +109,31 @@
             </table>
             
             <div class="totalContainer">
-                <div>
+                <div class="totalItems">
+                <div class="lightText">
                     Total
                 </div>
-                <div>
+                <div class="lightText">
                     ${{totalAmount}}
                 </div>
+                </div>
+               <div class="totalItems">
+                 <div class="lightText">
+                    Paid
+                </div>
+                <div class="lightText">
+                    ${{paidAmount}}
+                </div>
+                </div>
+               <div class="totalItems">
+                <div>
+                    Amount Due
+                </div>
+                <div>
+                    ${{dueAmount}}
+                </div>
+                </div>
+
             </div>
          </div>
 
@@ -122,7 +141,7 @@
         <div class="stripeLink">
         <a href={{stripeLink}}>
             <div>
-                Securely Pay this ${{totalAmount}} Invoice Now   
+                Securely Pay this ${{dueAmount}} Invoice Now   
             </div>
             <img src="{{asset "chevron_right.svg" "dataURI"}}" style="height: 16; width: 16;">
          </a>
@@ -146,7 +165,7 @@
         </div>
         <footer class="footer">
             <div class="footerAuto">
-                    This invoice was automatically generated. If you have any questions, please reach out to {{operatorName}} at {{operatorPhoneNumber}} or{{operatorEmailAddress}}.
+                    This invoice was automatically generated. If you have any questions, please reach out to {{operatorName}} at {{operatorPhoneNumber}} or {{operatorEmailAddress}}.
             </div>
 
             <div style="display: flex; flex-dierection: row; justify-content: space-between;">

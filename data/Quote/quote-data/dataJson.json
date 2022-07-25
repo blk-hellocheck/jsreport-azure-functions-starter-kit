@@ -33,7 +33,6 @@
         {
             "service": {
                 "name": "Lawn Care",
-                "tag": "Optional",
                 "frequency": "Every 2 weeks"
             },
             "lineItems": [

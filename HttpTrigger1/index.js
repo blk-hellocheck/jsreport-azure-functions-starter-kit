@@ -48,7 +48,7 @@ module.exports = async function (context, req) {
     );
 
     const blobUri =
-      `https://checkprodstorage.blob.core.windows.net/${containerName}/` +
+      `https://checkdevstorage.blob.core.windows.net/${containerName}/` +
       blobName;
 
     context.res = {
