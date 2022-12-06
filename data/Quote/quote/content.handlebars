@@ -31,6 +31,7 @@
                      <span class="detailsTitle">BID FOR</span> <span class="detailsValue">{{clientName}}</span>
                  </td>
              </tr>
+             {{#if businessAddress}}
              <tr>
                  <td class="detailsCell">
                     <span class="detailsTitle">ADDRESS</span> <span class="detailsValue">{{businessAddress}}</span>
@@ -39,6 +40,7 @@
                      <span class="detailsTitle">VALID FOR</span> <span class="detailsValue">{{validFor}}</span>
                  </td>
              </tr>
+             {{/if}}
              <tr>
                  <td class="detailsCell">
                      <span class="detailsTitle">PHONE</span> <span class="detailsValue">{{operatorPhoneNumber}}</span>
@@ -86,7 +88,7 @@
                             {{/if}}
                         </td>
                         <td class="rightAlign">
-                            ${{price}}
+                            ${{stringPrice price}}
                         </td>
                     </tr>
                     {{#each lineItems}}
@@ -95,7 +97,7 @@
                             {{name}}
                         </td>
                         <td class="rightAlign">
-                            ${{price}}
+                            ${{stringPrice price}}
                         </td>
                     </tr>
                     {{/each}}

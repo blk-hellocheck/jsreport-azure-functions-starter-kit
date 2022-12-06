@@ -44,9 +44,9 @@ module.exports = async function (context, req) {
       blobOptions
     );
 
+    const baseUri = process.env.BLOB_URI;
     const blobUri =
-      `https://checkprodstorage.blob.core.windows.net/${containerName}/` +
-      blobName;
+      `https://${baseUri}.blob.core.windows.net/${containerName}/` + blobName;
 
     context.res = {
       body: blobUri,

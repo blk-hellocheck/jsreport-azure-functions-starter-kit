@@ -31,6 +31,7 @@
                      <span class="detailsTitle">INVOICE FOR</span> <span class="detailsValue">{{clientName}}</span>
                  </td>
              </tr>
+             {{#if businessAddress}}
              <tr>
                  <td class="detailsCell">
                     <span class="detailsTitle">ADDRESS</span> <span class="detailsValue">{{businessAddress}}</span>
@@ -39,6 +40,7 @@
                      <span class="detailsTitle">PAYMENT TERMS</span> <span class="detailsValue">{{paymentTerms}}</span>
                  </td>
              </tr>
+             {{/if}}
              <tr>
                  <td class="detailsCell">
                      <span class="detailsTitle">PHONE</span> <span class="detailsValue">{{operatorPhoneNumber}}</span>
