@@ -28,7 +28,7 @@
                      <span class="detailsTitle">COMPANY</span> <span class="detailsValue">{{businessName}}</span>
                  </td>
                  <td>
-                     <span class="detailsTitle">INVOICE FOR</span> <span class="detailsValue">{{clientName}}</span>
+                     <span class="detailsTitle">INVOICE #</span> <span class="detailsValue">{{padInvoiceNumber invoiceNumber}}</span>
                  </td>
              </tr>
              {{#if businessAddress}}
@@ -44,6 +44,9 @@
              <tr>
                  <td class="detailsCell">
                      <span class="detailsTitle">PHONE</span> <span class="detailsValue">{{operatorPhoneNumber}}</span>
+                 </td>
+                 <td>
+                     <span class="detailsTitle">INVOICE FOR</span> <span class="detailsValue">{{clientName}}</span>
                  </td>
              </tr>
              <tr>
@@ -84,7 +87,7 @@
                            <span>{{service.name}}</span>
                         </td>
                         <td class="rightAlign">
-                            ${{price}}
+                            ${{stringPrice price}}
                         </td>
                     </tr>
                     {{#each lineItems}}
@@ -93,7 +96,7 @@
                             {{name}}
                         </td>
                         <td class="rightAlign">
-                            ${{price}}
+                            ${{stringPrice price}}
                         </td>
                     </tr>
                     {{/each}}
@@ -116,7 +119,7 @@
                     Total
                 </div>
                 <div class="lightText">
-                    ${{totalAmount}}
+                    ${{stringPrice totalAmount}}
                 </div>
                 </div>
                <div class="totalItems">
@@ -124,7 +127,7 @@
                     Paid
                 </div>
                 <div class="lightText">
-                    ${{paidAmount}}
+                    ${{stringPrice paidAmount}}
                 </div>
                 </div>
                <div class="totalItems">
@@ -132,7 +135,7 @@
                     Amount Due
                 </div>
                 <div>
-                    ${{dueAmount}}
+                    ${{stringPrice dueAmount}}
                 </div>
                 </div>
 
@@ -143,7 +146,7 @@
         <div class="stripeLink">
         <a href={{stripeLink}}>
             <div>
-                Securely Pay this ${{dueAmount}} Invoice Now   
+                Securely Pay this ${{stringPrice dueAmount}} Invoice Now   
             </div>
             <img src="{{asset "chevron_right.svg" "dataURI"}}" style="height: 16; width: 16;">
          </a>
