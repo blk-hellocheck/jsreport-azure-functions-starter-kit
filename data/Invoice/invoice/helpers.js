@@ -4,5 +4,5 @@ function stringPrice(price) {
 }
 
 function padInvoiceNumber(number) {
-  return number.toString().padStart(5, '0')
+  return number.toString().padStart(5, "0");
 }

@@ -31,24 +31,28 @@
                      <span class="detailsTitle">INVOICE #</span> <span class="detailsValue">{{padInvoiceNumber invoiceNumber}}</span>
                  </td>
              </tr>
-             {{#if businessAddress}}
+
              <tr>
+                {{#if businessAddress}}
                  <td class="detailsCell">
                     <span class="detailsTitle">ADDRESS</span> <span class="detailsValue">{{businessAddress}}</span>
                  </td>
-                 <td>
-                     <span class="detailsTitle">PAYMENT TERMS</span> <span class="detailsValue">{{paymentTerms}}</span>
+                {{else}}
+                <td class="detailsCell">
+                     <span class="detailsTitle">PHONE</span> <span class="detailsValue">{{operatorPhoneNumber}}</span>
+                 </td>
+                {{/if}}
+                <td>
+                     <span class="detailsTitle">INVOICE FOR</span> <span class="detailsValue">{{clientName}}</span>
                  </td>
              </tr>
-             {{/if}}
+             {{#if businessAddress}}
              <tr>
                  <td class="detailsCell">
                      <span class="detailsTitle">PHONE</span> <span class="detailsValue">{{operatorPhoneNumber}}</span>
                  </td>
-                 <td>
-                     <span class="detailsTitle">INVOICE FOR</span> <span class="detailsValue">{{clientName}}</span>
-                 </td>
              </tr>
+             {{/if}}
              <tr>
                  <td class="detailsCell">
                      <span class="detailsTitle">EMAIL</span> <span class="detailsValue">{{operatorEmailAddress}}</span>
